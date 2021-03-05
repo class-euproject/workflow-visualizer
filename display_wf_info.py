@@ -28,18 +28,14 @@ class DisplayInfo:
 
         # Video output
         fourcc = cv2.VideoWriter_fourcc(*'MP4V')
-        # width, height  = int(cap.get(3)), int(cap.get(4))
-        width, height  = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-        print(width, height)
-        # out = cv2.VideoWriter('TP.mp4', fourcc, 12, (width,height))
-        out = cv2.VideoWriter('TP.mp4', fourcc, 30, (width,height))
+        width, height  = int(cap.get(3)), int(cap.get(4))
+        out = cv2.VideoWriter('TP.mp4', fourcc, 12, (width,height))
 
         self.display_boxes(cap, out)
 
         cap.release()
         out.release()
         cv2.destroyAllWindows()
-
 
     # Colour codes of identified objects
     # 0: (0,127,255)   Person (Orange)
